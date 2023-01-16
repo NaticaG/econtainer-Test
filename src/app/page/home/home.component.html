@@ -1,0 +1,38 @@
+<body class="contenedor">
+  <!-- <app-menu> -->
+  <form>
+    <mat-form-field class="findInput">
+      <mat-label>
+        Find Hero
+      </mat-label>
+      <input matInput placeholder="Ex. Superman" [(ngModel)]="nameHero" name="hero" #hero="ngModel">
+    </mat-form-field>
+    <button name="search" mat-icon-button color="primary" (click)="findHero()"><mat-icon
+        color>search</mat-icon></button>
+    <button name="clean" mat-icon-button color="primary" (click)="clean()"><mat-icon color>close</mat-icon></button>
+
+  </form>
+  <mat-grid-list cols="4" rowHeight="3:5">
+    <mat-grid-tile *ngFor="let hero of heroes">
+      <mat-card (click)="showDetails(hero)">
+        <img mat-card-image [src]="hero.images.sm">
+        <mat-card-title>{{hero.name}}</mat-card-title>
+        <mat-card-content>
+          <p>
+            Intelligence: {{hero.powerstats.intelligence}}
+            <br>
+            Speed: {{hero.powerstats.speed}}
+            <br>
+            Power: {{hero.powerstats.power}}
+            <br>
+            Gender: {{hero.appearance.gender}}
+            <br>
+            Race: {{hero.appearance.race}}
+          </p>
+
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <!-- </app-menu> -->
+</body>

@@ -1,0 +1,68 @@
+<mat-card class="card">
+    <img mat-card-image [src]="selectedHero.images.lg">
+    <mat-card-title>{{selectedHero.name}}</mat-card-title>
+    <mat-card-content>
+        <mat-tab-group>
+            <mat-tab label="Powerstats">
+                <p>
+                    Intelligence: {{selectedHero.powerstats.intelligence}}
+                    <br>
+                    Strength: {{selectedHero.powerstats.strength}}
+                    <br>
+                    Speed: {{selectedHero.powerstats.speed}}
+                    <br>
+                    Durability: {{selectedHero.powerstats.durability}}
+                    <br>
+                    Power: {{selectedHero.powerstats.power}}
+                    <br>
+                    Combat: {{selectedHero.powerstats.combat}}
+                </p>
+            </mat-tab>
+            <mat-tab label="Appearance">
+                <p>
+                    Gender: {{selectedHero.appearance.gender}}
+                    <br>
+                    Race: {{selectedHero.appearance.race}}
+                    <br>
+                    Height: {{selectedHero.appearance.height}}
+                    <br>
+                    Weight: {{selectedHero.appearance.weight}}
+                    <br>
+                    EyeColor: {{selectedHero.appearance.eyeColor}}
+                    <br>
+                    HairColor: {{selectedHero.appearance.hairColor}}
+                </p>
+            </mat-tab>
+            <mat-tab label="Biography">
+                <p>
+                    FullName: {{selectedHero.biography.fullName}}
+                    <br>
+                    AlterEgos: {{selectedHero.biography.alterEgos}}
+                    <br>
+                    Aliases: {{selectedHero.biography.aliases}}
+                    <br>
+                    PlaceOfBirth: {{selectedHero.biography.placeOfBirth}}
+                    <br>
+                    FirstAppearance: {{selectedHero.biography.firstAppearance}}
+                    <br>
+                    Publisher: {{selectedHero.biography.publisher}}
+                    <br>
+                    Alignment: {{selectedHero.biography.alignment}}
+                </p>
+            </mat-tab>
+            <mat-tab label="Work">
+                Occupation: {{selectedHero.work.occupation}}
+                <br>
+                Base: {{selectedHero.work.base}}
+            </mat-tab>
+            <mat-tab label="Connections">
+                GroupAffiliation: {{selectedHero.connections.groupAffiliation}}
+                <br>
+                Relatives: {{selectedHero.connections.relatives}}
+            </mat-tab>
+        </mat-tab-group>
+        <button mat-raised-button color="primary" focusable="false" (click)="close()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-card-content>
+</mat-card>
